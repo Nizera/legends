@@ -4,6 +4,14 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Anton&family=Work+Sans:wght@400;500;600;700;800&display=swap');
 
+@font-face {
+  font-family: 'EA Sports';
+  src: url('/fonts/EASPORTS15.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --bg-deep: #071a10;
   --bg-panel: #0e2e1c;
@@ -29,6 +37,10 @@ body {
 
 .font-anton {
   font-family: 'Anton', sans-serif;
+}
+
+.font-fifa {
+  font-family: 'EA Sports', sans-serif;
 }
 
 /* Custom scrollbar */
@@ -108,4 +120,32 @@ html {
 .animate-shimmer {
   background-size: 200% 100%;
   animation: shimmer 3s linear infinite;
+}
+
+/* Modal overlay */
+.modal-overlay {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 99999 !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(8px);
+  padding: 16px;
+}
+
+/* Body scroll lock */
+body.modal-open {
+  overflow: hidden !important;
+  position: fixed !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+html.modal-open {
+  overflow: hidden !important;
 }

@@ -2,6 +2,8 @@
 
 import { Suspense } from "react";
 import { trackWhatsAppClick } from "@/components/FacebookPixel";
+import VideoPlayer from "@/components/VideoPlayer";
+import Chatbot from "@/components/Chatbot";
 
 function PageContent() {
   const handleCTAClick = () => {
@@ -26,32 +28,19 @@ function PageContent() {
         <h1 className="font-anton text-[36px] sm:text-[42px] leading-[1.02] text-center uppercase text-cream mb-2 animate-fade-up" style={{ animationDelay: "0.2s" }}>
           Como funciona o<br />
           <span className="text-gold-300 drop-shadow-[0_0_20px_rgba(246,217,118,0.3)]">
-            Leilão Legends
+            Leilão <span className="font-fifa">Legends</span>
           </span>
           <br />
           <span className="text-[28px] sm:text-[32px]">da Copa</span>
         </h1>
         <p className="text-center text-[14px] text-[#bcd6c5] max-w-[340px] mx-auto mb-7 font-medium leading-relaxed animate-fade-up" style={{ animationDelay: "0.3s" }}>
-          3 minutos de vídeo pra você entender os lances, o pagamento e o envio
+          1 minuto de vídeo pra você entender os lances, o pagamento e o envio
           antes de participar.
         </p>
 
         {/* Video */}
-        <div className="relative mb-8 animate-scale-in" style={{ animationDelay: "0.4s" }}>
-          <div className="relative aspect-[9/16] max-h-[440px] mx-auto rounded-2xl overflow-hidden bg-gradient-to-br from-[#12432a] via-[#0a2417] to-[#071a10] flex items-center justify-center border border-gold-500/30 shadow-[0_0_60px_rgba(0,0,0,0.5)]">
-            <div className="absolute inset-0 bg-[linear-gradient(115deg,transparent_40%,rgba(246,217,118,0.08)_50%,transparent_60%)]" />
-            <div className="relative z-10 flex flex-col items-center gap-4">
-              <div className="w-[64px] h-[64px] rounded-full bg-[radial-gradient(circle_at_32%_30%,var(--gold-300),var(--gold-700))] flex items-center justify-center animate-glow hover:scale-110 transition-transform cursor-pointer">
-                <div className="w-0 h-0 border-t-[10px] border-t-transparent border-b-[10px] border-b-transparent border-l-[17px] border-l-ink ml-1.5" />
-              </div>
-              <div className="text-center">
-                <p className="text-[13px] text-gold-300 font-bold mb-1">
-                  ▸ Assista antes de entrar
-                </p>
-                <p className="text-[11px] text-[#7d9c88]">2:47 de duração</p>
-              </div>
-            </div>
-          </div>
+        <div className="mb-8 animate-scale-in" style={{ animationDelay: "0.4s" }}>
+          <VideoPlayer />
         </div>
 
         {/* Divider */}
@@ -67,7 +56,7 @@ function PageContent() {
         <div className="flex flex-col gap-3 mb-8">
           {[
             { num: 1, title: "Os lances acontecem ao vivo no grupo", desc: "Cada figurinha tem lance inicial e horário de início/fim. Se alguém dá lance no último minuto, o tempo estende 3min.", icon: "⚡" },
-            { num: 2, title: "Pagamento é só via Pix, com comprovante", desc: "Quem arrematou paga via Pix direto e envia o comprovante no grupo.", icon: "💸" },
+            { num: 2, title: "Pagamento é só via Pix, com comprovante", desc: "Quem arrematou paga via Pix e envia o comprovante ao suporte.", icon: "💸" },
             { num: 3, title: "Envio combinado após confirmação", desc: "Com o pagamento confirmado, o envio é combinado até a entrega ser concluída.", icon: "📦" },
           ].map((step, i) => (
             <div
@@ -81,7 +70,7 @@ function PageContent() {
               <div className="flex-1">
                 <div className="flex items-center gap-2 mb-1">
                   <span className="text-[14px] group-hover:scale-110 transition-transform duration-300">{step.icon}</span>
-                  <h3 className="text-[14px] text-cream font-bold">{step.title}</h3>
+                  <h3 className="font-anton text-[15px] text-cream font-bold tracking-[0.05em]">{step.title}</h3>
                 </div>
                 <p className="text-[12.5px] text-[#9fc2ab] leading-[1.5]">{step.desc}</p>
               </div>
@@ -120,11 +109,12 @@ function PageContent() {
           </p>
           <div className="mt-3 flex items-center justify-center gap-1.5">
             <div className="w-1.5 h-1.5 rounded-full bg-gold-500/40" />
-            <span className="text-[10px] text-[#7d9c88] tracking-wider uppercase">Leilão Legends © 2026</span>
+            <span className="text-[10px] text-[#7d9c88] tracking-wider uppercase">Leilão <span className="font-fifa">Legends</span> © 2026</span>
             <div className="w-1.5 h-1.5 rounded-full bg-gold-500/40" />
           </div>
         </div>
       </div>
+      <Chatbot />
     </div>
   );
 }

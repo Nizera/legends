@@ -26,6 +26,7 @@ const config: Config = {
       fontFamily: {
         anton: ["Anton", "sans-serif"],
         work: ["Work Sans", "sans-serif"],
+        fifa: ["EA Sports", "sans-serif"],
       },
     },
   },
