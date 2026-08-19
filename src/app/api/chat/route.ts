@@ -37,7 +37,7 @@ export async function POST(req: NextRequest) {
           Authorization: `Bearer ${NVIDIA_API_KEY}`,
         },
         body: JSON.stringify({
-          model: "meta/llama-3.3-70b-instruct",
+          model: "z-ai/glm-5.2",
           messages: [
             { role: "system", content: SYSTEM_PROMPT },
             { role: "user", content: message },
