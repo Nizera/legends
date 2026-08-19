@@ -39,7 +39,10 @@ export default function Chatbot() {
         body: JSON.stringify({ message: text }),
       });
       const data = await res.json();
-      const reply = data.reply || "Erro ao conectar. Tente novamente.";
+      if (data.error) {
+        throw new Error(data.error);
+      }
+      const reply = data.reply || "Desculpe, não consegui processar sua mensagem.";
       setMessages((prev) => [...prev, { role: "assistant", text: reply }]);
     } catch {
       setMessages((prev) => [
