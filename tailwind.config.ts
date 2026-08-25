@@ -18,6 +18,7 @@ const config: Config = {
         gold: {
           DEFAULT: "#e4b94e",
           300: "#f6d976",
+          500: "#e4b94e",
           700: "#a9791e",
         },
         cream: "#f7f1de",

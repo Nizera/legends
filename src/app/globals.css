@@ -149,3 +149,46 @@ body.modal-open {
 html.modal-open {
   overflow: hidden !important;
 }
+
+/* Fix browser autofill on dark backgrounds */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 1000px #0e2e1c inset !important;
+  -webkit-text-fill-color: #1a5c30 !important;
+  color: #1a5c30 !important;
+  caret-color: #1a5c30 !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+  transition: background-color 5000s ease-in-out 0s, color 5000s ease-in-out 0s;
+}
+
+/* Input base visibility */
+input, textarea, select {
+  color: #1a5c30 !important;
+  -webkit-text-fill-color: #1a5c30 !important;
+}
+
+input::placeholder, textarea::placeholder {
+  -webkit-text-fill-color: #6a9078 !important;
+  color: #6a9078 !important;
+}
+
+/* Force autofill text to be visible - Chrome/Safari/Edge */
+@keyframes onAutoFillStart {
+  from { opacity: 0.99; }
+  to { opacity: 1; }
+}
+
+input:autofill {
+  animation-name: onAutoFillStart;
+  -webkit-box-shadow: 0 0 0 1000px #0e2e1c inset !important;
+  -webkit-text-fill-color: #1a5c30 !important;
+  color: #1a5c30 !important;
+}

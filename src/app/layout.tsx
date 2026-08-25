@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 import { FacebookPixel } from "@/components/FacebookPixel";
+import { AuthProvider } from "@/contexts/AuthContext";
 import "./globals.css";
 
 const PIXEL_ID = "1074294225103386";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://leilaolegends.online"),
   title: "Leilão Legends da Copa — Antes de entrar, assista",
   description:
     "1 minuto de vídeo pra você entender os lances, o pagamento e o envio antes de participar do Leilão Legends.",
@@ -37,9 +39,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-BR" className="h-full antialiased">
-      <body className="min-h-screen">
-        <FacebookPixel pixelId={PIXEL_ID} />
-        {children}
+      <body className="min-h-screen" suppressHydrationWarning>
+        <AuthProvider>
+          <FacebookPixel pixelId={PIXEL_ID} />
+          {children}
+        </AuthProvider>
       </body>
     </html>
   );
