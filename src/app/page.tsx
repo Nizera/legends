@@ -108,11 +108,23 @@ function PageContent() {
             <div className="h-px flex-1 bg-gradient-to-l from-transparent to-gold-500/30" />
           </div>
           <div className="overflow-hidden rounded-xl border border-white/[0.06]">
-            <div className="flex gap-3 animate-marquee">
-              {[1, 2, 3, 1, 2, 3].map((num, i) => (
+            <div className="flex gap-3 w-max animate-marquee">
+              {[1, 2, 3].map((num) => (
                 <div
-                  key={i}
-                  className="flex-none w-[70%] rounded-xl overflow-hidden"
+                  key={`a-${num}`}
+                  className="flex-none w-[280px] rounded-xl overflow-hidden"
+                >
+                  <img
+                    src={`/feedback_0${num}_final.png`}
+                    alt={`Feedback ${num}`}
+                    className="w-full h-auto object-cover"
+                  />
+                </div>
+              ))}
+              {[1, 2, 3].map((num) => (
+                <div
+                  key={`b-${num}`}
+                  className="flex-none w-[280px] rounded-xl overflow-hidden"
                 >
                   <img
                     src={`/feedback_0${num}_final.png`}
