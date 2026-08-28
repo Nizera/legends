@@ -81,7 +81,7 @@ function PageContent() {
         {/* CTA */}
         <div className="text-center animate-fade-up" style={{ animationDelay: "0.9s" }}>
           <a
-            href="https://chat.whatsapp.com/COyzvivlJBY2QYI6NMsl4V"
+            href="https://chat.whatsapp.com/BzoMxFZgfjj397UU1Z6mOn"
             target="_blank"
             rel="noopener noreferrer"
             onClick={handleCTAClick}
