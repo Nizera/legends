@@ -39,8 +39,28 @@ function PageContent() {
         </p>
 
         {/* Video */}
-        <div className="mb-8 animate-scale-in" style={{ animationDelay: "0.4s" }}>
+        <div className="mb-5 animate-scale-in" style={{ animationDelay: "0.4s" }}>
           <VideoPlayer />
+        </div>
+
+        {/* CTA pós-vídeo */}
+        <div className="mb-8 text-center animate-fade-up" style={{ animationDelay: "0.5s" }}>
+          <a
+            href="https://chat.whatsapp.com/BzoMxFZgfjj397UU1Z6mOn"
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={handleCTAClick}
+            className="group relative block w-full bg-gradient-to-br from-green-light to-green text-cream font-anton text-[17px] tracking-[0.02em] uppercase no-underline py-3.5 rounded-xl border border-gold-500/40 shadow-[0_10px_30px_rgba(20,107,57,0.4)] hover:shadow-[0_10px_50px_rgba(20,107,57,0.7)] hover:scale-[1.03] transition-all duration-300 overflow-hidden"
+          >
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/15 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
+            <span className="relative z-10">Entrar no grupo agora</span>
+          </a>
+          <div className="mt-2 flex items-center justify-center gap-4 text-[11px] text-[#7d9c88]">
+            <span className="flex items-center gap-1">
+              <span className="w-1.5 h-1.5 rounded-full bg-green-light animate-pulse" />
+              Grupo gratuito
+            </span>
+          </div>
         </div>
 
         {/* Divider */}
