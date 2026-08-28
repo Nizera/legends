@@ -98,6 +98,32 @@ function PageContent() {
           ))}
         </div>
 
+        {/* Feedbacks */}
+        <div className="mb-8 animate-fade-up" style={{ animationDelay: "0.9s" }}>
+          <div className="flex items-center gap-3 mb-4">
+            <div className="h-px flex-1 bg-gradient-to-r from-transparent to-gold-500/30" />
+            <span className="text-[11px] tracking-[0.15em] uppercase text-gold-300 font-bold">
+              Feedbacks do grupo
+            </span>
+            <div className="h-px flex-1 bg-gradient-to-l from-transparent to-gold-500/30" />
+          </div>
+          <div className="flex gap-3 overflow-x-auto pb-2 snap-x snap-mandatory scrollbar-hide">
+            {[1, 2, 3].map((num) => (
+              <div
+                key={num}
+                className="flex-none w-[70%] snap-center rounded-xl overflow-hidden border border-white/[0.06] hover:border-gold-500/30 transition-all duration-300"
+              >
+                <img
+                  src={`/feedback_0${num}_final.png`}
+                  alt={`Feedback ${num}`}
+                  className="w-full h-auto object-cover"
+                  loading="lazy"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+
         {/* CTA */}
         <div className="text-center animate-fade-up" style={{ animationDelay: "0.9s" }}>
           <a

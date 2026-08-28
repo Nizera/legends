@@ -146,6 +146,15 @@ body.modal-open {
   height: 100% !important;
 }
 
+/* Hide scrollbar for feedback carousel */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
 html.modal-open {
   overflow: hidden !important;
 }
