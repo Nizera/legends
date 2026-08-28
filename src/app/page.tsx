@@ -1,14 +1,25 @@
 "use client";
 
-import { Suspense } from "react";
+import { Suspense, useState, useEffect } from "react";
 import { trackWhatsAppClick } from "@/components/FacebookPixel";
 import VideoPlayer from "@/components/VideoPlayer";
 import Chatbot from "@/components/Chatbot";
+
+const FEEDBACKS = [1, 2, 3];
 
 function PageContent() {
   const handleCTAClick = () => {
     trackWhatsAppClick();
   };
+
+  const [current, setCurrent] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % FEEDBACKS.length);
+    }, 4000);
+    return () => clearInterval(timer);
+  }, []);
 
   return (
     <div className="min-h-screen flex flex-col items-center px-4 py-6 sm:py-10">
@@ -107,20 +118,33 @@ function PageContent() {
             </span>
             <div className="h-px flex-1 bg-gradient-to-l from-transparent to-gold-500/30" />
           </div>
-          <div className="flex gap-3 overflow-x-auto pb-2 snap-x snap-mandatory scrollbar-hide">
-            {[1, 2, 3].map((num) => (
-              <div
-                key={num}
-                className="flex-none w-[70%] snap-center rounded-xl overflow-hidden border border-white/[0.06] hover:border-gold-500/30 transition-all duration-300"
-              >
+          <div className="relative rounded-xl overflow-hidden border border-white/[0.06]">
+            <div className="relative w-full aspect-[4/3]">
+              {FEEDBACKS.map((num) => (
                 <img
+                  key={num}
                   src={`/feedback_0${num}_final.png`}
                   alt={`Feedback ${num}`}
-                  className="w-full h-auto object-cover"
-                  loading="lazy"
+                  className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${
+                    current === num - 1 ? "opacity-100" : "opacity-0"
+                  }`}
                 />
-              </div>
-            ))}
+              ))}
+            </div>
+            <div className="absolute bottom-3 left-0 right-0 flex items-center justify-center gap-2">
+              {FEEDBACKS.map((num) => (
+                <button
+                  key={num}
+                  onClick={() => setCurrent(num - 1)}
+                  className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                    current === num - 1
+                      ? "bg-gold-300 w-5"
+                      : "bg-white/40 hover:bg-white/60"
+                  }`}
+                  aria-label={`Feedback ${num}`}
+                />
+              ))}
+            </div>
           </div>
         </div>
 
