@@ -1,6 +1,7 @@
 "use client";
 
 import { Suspense } from "react";
+import { Camera, Shield, Truck, Users, Zap, CheckCircle } from "lucide-react";
 import { trackWhatsAppClick } from "@/components/FacebookPixel";
 import VideoPlayer from "@/components/VideoPlayer";
 import Chatbot from "@/components/Chatbot";
@@ -11,103 +12,118 @@ function PageContent() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col items-center px-4 py-6 sm:py-10">
-      <div className="w-full max-w-[480px]">
-        {/* Eyebrow */}
-        <div className="flex items-center justify-center gap-2 mb-5 animate-fade-in" style={{ animationDelay: "0.1s" }}>
-          <div className="relative animate-float">
-            <div className="w-2 h-2 rounded-full bg-gold-300 animate-pulse" />
-            <div className="absolute inset-0 w-2 h-2 rounded-full bg-gold-300 animate-ping opacity-75" />
-          </div>
-          <span className="text-[11px] tracking-[0.2em] uppercase text-gold-300 font-bold">
-            Grupo ativo agora
-          </span>
+    <div className="min-h-screen flex flex-col">
+      <header className="sticky top-0 z-40 border-b bg-background/95 backdrop-blur">
+        <div className="mx-auto flex h-14 w-full max-w-6xl items-center gap-3 px-4 md:px-6">
+          <a href="/" className="flex items-center gap-2 font-heading font-bold text-lg">
+            <span className="flex size-7 items-center justify-center rounded-lg bg-primary text-primary-foreground">
+              <Zap className="size-4" />
+            </span>
+            Leilão <span className="font-fifa text-primary">Legends</span>
+          </a>
+          <nav className="ml-auto flex items-center gap-2">
+            <a
+              href="https://www.instagram.com/oscarasdaslegends/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1.5 px-3 py-1.5 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+            >
+              <Camera className="size-4" />
+              @oscarasdaslegends
+            </a>
+          </nav>
         </div>
+      </header>
 
-        {/* Hero */}
-        <h1 className="font-anton text-[36px] sm:text-[42px] leading-[1.02] text-center uppercase text-cream mb-2 animate-fade-up" style={{ animationDelay: "0.2s" }}>
-          Como funciona o<br />
-          <span className="text-gold-300 drop-shadow-[0_0_20px_rgba(246,217,118,0.3)]">
-            Leilão <span className="font-fifa">Legends</span>
+      <main className="mx-auto w-full max-w-6xl flex-1 px-4 md:px-6 py-12 md:py-20">
+        <section className="flex flex-col items-center gap-6 text-center animate-fade-up">
+          <span className="inline-flex items-center gap-2 rounded-full border px-3 py-1 text-xs text-muted-foreground">
+            <Users className="size-3.5" />
+            Leilão diário de figurinhas · Copa 2026
           </span>
-          <br />
-          <span className="text-[28px] sm:text-[32px]">da Copa</span>
-        </h1>
-        <p className="text-center text-[14px] text-[#bcd6c5] max-w-[340px] mx-auto mb-7 font-medium leading-relaxed animate-fade-up" style={{ animationDelay: "0.3s" }}>
-          1 minuto de vídeo pra você entender os lances, o pagamento e o envio
-          antes de participar.
-        </p>
+          <h1 className="max-w-3xl text-balance font-heading font-bold tracking-tight text-4xl md:text-5xl lg:text-6xl">
+            Como funciona o <br />
+            <span className="text-primary">
+              Leilão <span className="font-fifa">Legends</span> da Copa
+            </span>
+          </h1>
+          <p className="max-w-2xl text-balance text-muted-foreground md:text-lg">
+            1 minuto de vídeo pra você entender os lances, o pagamento e o envio
+            antes de participar.
+          </p>
+        </section>
 
-        {/* Video */}
-        <div className="mb-5 animate-scale-in" style={{ animationDelay: "0.4s" }}>
+        <section className="mt-10 animate-fade-up" style={{ animationDelay: "0.2s" }}>
           <VideoPlayer />
-        </div>
+        </section>
 
-        {/* CTA pós-vídeo */}
-        <div className="mb-8 text-center animate-fade-up" style={{ animationDelay: "0.5s" }}>
+        <section className="mt-8 text-center animate-fade-up" style={{ animationDelay: "0.3s" }}>
           <a
             href="https://chat.whatsapp.com/EYD5CmJ0Oer4aeM0zQ9mqu"
             target="_blank"
             rel="noopener noreferrer"
             onClick={handleCTAClick}
-            className="group relative block w-full bg-gradient-to-br from-green-light to-green text-cream font-anton text-[17px] tracking-[0.02em] uppercase no-underline py-3.5 rounded-xl border border-gold-500/40 shadow-[0_10px_30px_rgba(20,107,57,0.4)] hover:shadow-[0_10px_50px_rgba(20,107,57,0.7)] hover:scale-[1.03] transition-all duration-300 overflow-hidden"
+            className="group relative inline-flex items-center justify-center gap-2 w-full max-w-xs bg-primary text-primary-foreground font-heading text-base tracking-[0.02em] uppercase no-underline py-3.5 px-6 rounded-xl border border-primary/30 shadow-[0_10px_30px_rgba(0,0,0,0.3)] hover:shadow-[0_10px_50px_rgba(0,0,0,0.5)] hover:scale-[1.02] transition-all duration-300 overflow-hidden"
           >
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/15 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
             <span className="relative z-10">Entrar no grupo agora</span>
+            <Zap className="size-4 relative z-10" />
           </a>
-          <div className="mt-2 flex items-center justify-center gap-4 text-[11px] text-[#7d9c88]">
+          <div className="mt-3 flex items-center justify-center gap-4 text-xs text-muted-foreground">
             <span className="flex items-center gap-1">
-              <span className="w-1.5 h-1.5 rounded-full bg-green-light animate-pulse" />
+              <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
               Grupo gratuito
             </span>
+            <span>·</span>
+            <span>Qualquer pessoa pode dar lance</span>
           </div>
-        </div>
+        </section>
 
-        {/* Divider */}
-        <div className="flex items-center gap-3 mb-6 animate-fade-in" style={{ animationDelay: "0.5s" }}>
-          <div className="h-px flex-1 bg-gradient-to-r from-transparent to-gold-500/30" />
-          <span className="text-[11px] tracking-[0.15em] uppercase text-gold-300 font-bold">
-            Regras do jogo
-          </span>
-          <div className="h-px flex-1 bg-gradient-to-l from-transparent to-gold-500/30" />
-        </div>
-
-        {/* Steps */}
-        <div className="flex flex-col gap-3 mb-8">
-          {[
-            { num: 1, title: "Os lances acontecem ao vivo no grupo", desc: "Cada figurinha tem lance inicial e horário de início/fim. Se alguém dá lance no último minuto, o tempo estende 3min.", icon: "⚡" },
-            { num: 2, title: "Pagamento é só via Pix, com comprovante", desc: "Quem arrematou paga via Pix e envia o comprovante ao suporte.", icon: "💸" },
-            { num: 3, title: "Envio combinado após confirmação", desc: "Com o pagamento confirmado, o envio é combinado até a entrega ser concluída.", icon: "📦" },
-          ].map((step, i) => (
-            <div
-              key={step.num}
-              className="flex gap-3.5 items-start bg-panel/60 backdrop-blur-sm border border-white/[0.06] rounded-xl p-4 hover:border-gold-500/30 hover:bg-panel/80 transition-all duration-300 animate-fade-up group"
-              style={{ animationDelay: `${0.55 + i * 0.12}s` }}
-            >
-              <div className="flex-none w-[32px] h-[32px] rounded-lg bg-gradient-to-br from-gold-300 to-gold-700 text-ink font-anton text-[14px] flex items-center justify-center shadow-md group-hover:scale-110 group-hover:shadow-[0_0_12px_rgba(228,185,78,0.4)] transition-all duration-300">
-                {step.num}
-              </div>
-              <div className="flex-1">
-                <div className="flex items-center gap-2 mb-1">
-                  <span className="text-[14px] group-hover:scale-110 transition-transform duration-300">{step.icon}</span>
-                  <h3 className="font-anton text-[15px] text-cream font-bold tracking-[0.05em]">{step.title}</h3>
+        <section className="mt-12 animate-fade-up" style={{ animationDelay: "0.4s" }}>
+          <div className="flex items-center gap-3 mb-6">
+            <div className="h-px flex-1 bg-gradient-to-r from-transparent to-border" />
+            <span className="text-xs tracking-[0.15em] uppercase text-muted-foreground font-bold">
+              Regras do jogo
+            </span>
+            <div className="h-px flex-1 bg-gradient-to-l from-transparent to-border" />
+          </div>
+          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {[
+              { num: 1, title: "Lances ao vivo no grupo", desc: "Cada figurinha tem lance inicial e horário de início/fim. Se alguém dá lance no último minuto, o tempo estende 3min.", icon: Zap },
+              { num: 2, title: "Pagamento via Pix com comprovante", desc: "Quem arrematou paga via Pix e envia o comprovante ao suporte.", icon: Shield },
+              { num: 3, title: "Envio combinado após confirmação", desc: "Com o pagamento confirmado, o envio é combinado até a entrega ser concluída.", icon: Truck },
+            ].map((step, i) => (
+              <div
+                key={step.num}
+                className="flex gap-3.5 items-start bg-card/60 backdrop-blur-sm border border-border rounded-xl p-4 hover:border-primary/30 hover:bg-card/80 transition-all duration-300 animate-fade-up group"
+                style={{ animationDelay: `${0.5 + i * 0.1}s` }}
+              >
+                <div className="flex-none w-10 h-10 rounded-lg bg-primary/20 text-primary font-heading text-base flex items-center justify-center shadow-sm group-hover:scale-110 group-hover:shadow-[0_0_12px_oklch(0.65_0.15_85_/0.3)] transition-all duration-300">
+                  {step.num}
                 </div>
-                <p className="text-[12.5px] text-[#9fc2ab] leading-[1.5]">{step.desc}</p>
+                <div className="flex-1">
+                  <div className="flex items-center gap-2 mb-1">
+                    <span className="text-base group-hover:scale-110 transition-transform duration-300">
+                      <step.icon className="size-5 text-primary" />
+                    </span>
+                    <h3 className="font-heading text-sm text-foreground font-bold tracking-[0.05em]">{step.title}</h3>
+                  </div>
+                  <p className="text-xs text-muted-foreground leading-relaxed">{step.desc}</p>
+                </div>
               </div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
+        </section>
 
-        {/* Feedbacks */}
-        <div className="mb-8 animate-fade-up" style={{ animationDelay: "0.9s" }}>
-          <div className="flex items-center gap-3 mb-4">
-            <div className="h-px flex-1 bg-gradient-to-r from-transparent to-gold-500/30" />
-            <span className="text-[11px] tracking-[0.15em] uppercase text-gold-300 font-bold">
+        <section className="mt-12 animate-fade-up" style={{ animationDelay: "0.5s" }}>
+          <div className="flex items-center gap-3 mb-6">
+            <div className="h-px flex-1 bg-gradient-to-r from-transparent to-border" />
+            <span className="text-xs tracking-[0.15em] uppercase text-muted-foreground font-bold">
               Feedbacks do grupo
             </span>
-            <div className="h-px flex-1 bg-gradient-to-l from-transparent to-gold-500/30" />
+            <div className="h-px flex-1 bg-gradient-to-l from-transparent to-border" />
           </div>
-          <div className="overflow-hidden rounded-xl border border-white/[0.06]">
+          <div className="overflow-hidden rounded-xl border border-border">
             <div className="flex gap-3 w-max animate-marquee">
               {[1, 2, 3].map((num) => (
                 <div
@@ -135,44 +151,70 @@ function PageContent() {
               ))}
             </div>
           </div>
-        </div>
+        </section>
 
-        {/* CTA */}
-        <div className="text-center animate-fade-up" style={{ animationDelay: "0.9s" }}>
+        <section className="mt-12 animate-fade-up" style={{ animationDelay: "0.6s" }}>
+          <div className="rounded-2xl bg-card/50 border border-border p-8 md:p-12 text-center">
+            <div className="flex items-center justify-center gap-2 mb-4 text-primary">
+              <Users className="size-6" />
+              <h2 className="font-heading text-2xl md:text-3xl font-bold tracking-tight">
+                Comunidade ativa no Instagram
+              </h2>
+            </div>
+            <p className="max-w-xl mx-auto text-muted-foreground mb-6">
+              Acompanhe o <strong className="text-foreground">@oscarasdaslegends</strong> no Instagram.
+              Milhares de colecionadores já fazem parte — veja os arremates, bastidores e novidades em tempo real.
+            </p>
+            <a
+              href="https://www.instagram.com/oscarasdaslegends/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-primary text-primary-foreground font-heading text-sm tracking-[0.02em] uppercase rounded-xl hover:bg-primary/90 transition-colors"
+            >
+              <Camera className="size-4" />
+              Seguir no Instagram
+            </a>
+          </div>
+        </section>
+
+        <section className="mt-10 text-center animate-fade-up" style={{ animationDelay: "0.7s" }}>
           <a
             href="https://chat.whatsapp.com/EYD5CmJ0Oer4aeM0zQ9mqu"
             target="_blank"
             rel="noopener noreferrer"
             onClick={handleCTAClick}
-            className="group relative block w-full bg-gradient-to-br from-green-light to-green text-cream font-anton text-[18px] tracking-[0.02em] uppercase no-underline py-4 rounded-xl border border-gold-500/40 shadow-[0_10px_30px_rgba(20,107,57,0.4)] hover:shadow-[0_10px_50px_rgba(20,107,57,0.7)] hover:scale-[1.03] transition-all duration-300 overflow-hidden"
+            className="group relative inline-flex items-center justify-center gap-2 w-full max-w-xs bg-primary text-primary-foreground font-heading text-lg tracking-[0.02em] uppercase no-underline py-4 px-8 rounded-xl border border-primary/30 shadow-[0_10px_30px_rgba(0,0,0,0.3)] hover:shadow-[0_10px_50px_rgba(0,0,0,0.5)] hover:scale-[1.02] transition-all duration-300 overflow-hidden"
           >
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/15 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
             <span className="relative z-10">Entrar no grupo agora</span>
+            <Zap className="size-5 relative z-10" />
           </a>
-          <div className="mt-3 flex items-center justify-center gap-4 text-[11px] text-[#7d9c88]">
+          <div className="mt-4 flex items-center justify-center gap-4 text-xs text-muted-foreground">
             <span className="flex items-center gap-1">
-              <span className="w-1.5 h-1.5 rounded-full bg-green-light animate-pulse" />
+              <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
               Grupo gratuito
             </span>
             <span>·</span>
-            <span>Qualquer pessoa pode dar lance</span>
+            <span>Sem compromisso, só diversão</span>
           </div>
-        </div>
+        </section>
 
-        {/* Footer */}
-        <div className="mt-8 pt-6 border-t border-white/[0.06] text-center animate-fade-in" style={{ animationDelay: "1s" }}>
-          <p className="text-[11px] text-[#7d9c88] leading-[1.6] px-4">
+        <footer className="mt-12 pt-8 border-t border-border text-center animate-fade-in" style={{ animationDelay: "0.8s" }}>
+          <p className="text-xs text-muted-foreground leading-relaxed px-4 max-w-xl mx-auto">
             Leilão informal entre colecionadores.
             <br />
             Nunca faça pagamento antes de confirmar o arremate no grupo.
           </p>
-          <div className="mt-3 flex items-center justify-center gap-1.5">
-            <div className="w-1.5 h-1.5 rounded-full bg-gold-500/40" />
-            <span className="text-[10px] text-[#7d9c88] tracking-wider uppercase">Leilão <span className="font-fifa">Legends</span> © 2026</span>
-            <div className="w-1.5 h-1.5 rounded-full bg-gold-500/40" />
+          <div className="mt-4 flex items-center justify-center gap-2">
+            <div className="w-1.5 h-1.5 rounded-full bg-primary/40" />
+            <span className="text-xs text-muted-foreground tracking-wider uppercase">
+              Leilão <span className="font-fifa text-primary">Legends</span> © 2026
+            </span>
+            <div className="w-1.5 h-1.5 rounded-full bg-primary/40" />
           </div>
-        </div>
-      </div>
+        </footer>
+      </main>
+
       <Chatbot />
     </div>
   );
@@ -180,7 +222,7 @@ function PageContent() {
 
 export default function HomePage() {
   return (
-    <Suspense fallback={<div className="min-h-screen" />}>
+    <Suspense fallback={<div className="min-h-screen bg-background" />}>
       <PageContent />
     </Suspense>
   );

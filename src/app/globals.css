@@ -2,8 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Anton&family=Work+Sans:wght@400;500;600;700;800&display=swap');
-
 @font-face {
   font-family: 'EA Sports';
   src: url('/fonts/EASPORTS15.ttf') format('truetype');
@@ -13,26 +11,42 @@
 }
 
 :root {
-  --bg-deep: #071a10;
-  --bg-panel: #0e2e1c;
-  --green: #146b39;
-  --green-light: #1f9b52;
-  --gold: #e4b94e;
-  --gold-300: #f6d976;
-  --gold-700: #a9791e;
-  --cream: #f7f1de;
-  --ink: #081208;
+  --background: 12 0% 12%;
+  --foreground: 0 0% 98%;
+  --card: 0 0% 16%;
+  --card-foreground: 0 0% 98%;
+  --popover: 0 0% 16%;
+  --popover-foreground: 0 0% 98%;
+  --primary: 85 100% 40%;
+  --primary-foreground: 0 0% 12%;
+  --secondary: 0 0% 20%;
+  --secondary-foreground: 0 0% 98%;
+  --muted: 0 0% 20%;
+  --muted-foreground: 0 0% 65%;
+  --accent: 0 0% 20%;
+  --accent-foreground: 0 0% 98%;
+  --destructive: 25 100% 50%;
+  --border: 0 0% 25%;
+  --input: 0 0% 25%;
+  --ring: 0 0% 50%;
+  --radius: 0.5rem;
 }
 
-* {
-  box-sizing: border-box;
-}
-
-body {
-  background: var(--bg-deep);
-  color: var(--cream);
-  font-family: 'Work Sans', sans-serif;
-  -webkit-font-smoothing: antialiased;
+@layer base {
+  * {
+    border-color: hsl(var(--border));
+    outline-color: hsl(var(--ring) / 0.5);
+  }
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-family: var(--font-inter), ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  html {
+    font-family: var(--font-inter), ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  }
 }
 
 .font-anton {
@@ -43,30 +57,34 @@ body {
   font-family: 'EA Sports', sans-serif;
 }
 
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 4px;
-}
-::-webkit-scrollbar-track {
-  background: transparent;
-}
-::-webkit-scrollbar-thumb {
-  background: var(--gold-700);
-  border-radius: 2px;
+@layer utilities {
+  .animate-fade-up {
+    animation: fadeUp 0.6s ease-out both;
+  }
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-out both;
+  }
+  .animate-scale-in {
+    animation: scaleIn 0.5s ease-out both;
+  }
+  .animate-glow {
+    animation: glowPulse 2.5s ease-in-out infinite;
+  }
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+  .animate-shimmer {
+    background-size: 200% 100%;
+    animation: shimmer 3s linear infinite;
+  }
+  .animate-marquee {
+    animation: marquee 15s linear infinite;
+  }
+  .animate-marquee:hover {
+    animation-play-state: paused;
+  }
 }
 
-/* Smooth scroll */
-html {
-  scroll-behavior: smooth;
-}
-
-/* Selection color */
-::selection {
-  background: rgba(228, 185, 78, 0.3);
-  color: var(--cream);
-}
-
-/* Animations */
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(24px); }
   to { opacity: 1; transform: translateY(0); }
@@ -83,8 +101,8 @@ html {
 }
 
 @keyframes glowPulse {
-  0%, 100% { box-shadow: 0 0 0 10px rgba(228,185,78,0.15), 0 0 40px rgba(228,185,78,0.2), 0 12px 30px rgba(0,0,0,0.5); }
-  50% { box-shadow: 0 0 0 14px rgba(228,185,78,0.25), 0 0 60px rgba(228,185,78,0.35), 0 12px 30px rgba(0,0,0,0.5); }
+  0%, 100% { box-shadow: 0 0 0 10px hsl(85 100% 40% / 0.15), 0 0 40px hsl(85 100% 40% / 0.2), 0 12px 30px rgba(0,0,0,0.5); }
+  50% { box-shadow: 0 0 0 14px hsl(85 100% 40% / 0.25), 0 0 60px hsl(85 100% 40% / 0.35), 0 12px 30px rgba(0,0,0,0.5); }
 }
 
 @keyframes shimmer {
@@ -97,32 +115,11 @@ html {
   50% { transform: translateY(-4px); }
 }
 
-.animate-fade-up {
-  animation: fadeUp 0.6s ease-out both;
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(calc(-280px * 3 - 12px * 3)); }
 }
 
-.animate-fade-in {
-  animation: fadeIn 0.5s ease-out both;
-}
-
-.animate-scale-in {
-  animation: scaleIn 0.5s ease-out both;
-}
-
-.animate-glow {
-  animation: glowPulse 2.5s ease-in-out infinite;
-}
-
-.animate-float {
-  animation: float 3s ease-in-out infinite;
-}
-
-.animate-shimmer {
-  background-size: 200% 100%;
-  animation: shimmer 3s linear infinite;
-}
-
-/* Modal overlay */
 .modal-overlay {
   position: fixed !important;
   top: 0;
@@ -138,7 +135,6 @@ html {
   padding: 16px;
 }
 
-/* Body scroll lock */
 body.modal-open {
   overflow: hidden !important;
   position: fixed !important;
@@ -146,7 +142,6 @@ body.modal-open {
   height: 100% !important;
 }
 
-/* Hide scrollbar for feedback carousel */
 .scrollbar-hide {
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -155,23 +150,10 @@ body.modal-open {
   display: none;
 }
 
-/* Infinite marquee for feedbacks */
-@keyframes marquee {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(calc(-280px * 3 - 12px * 3)); }
-}
-.animate-marquee {
-  animation: marquee 15s linear infinite;
-}
-.animate-marquee:hover {
-  animation-play-state: paused;
-}
-
 html.modal-open {
   overflow: hidden !important;
 }
 
-/* Fix browser autofill on dark backgrounds */
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
@@ -181,27 +163,26 @@ textarea:-webkit-autofill:hover,
 textarea:-webkit-autofill:focus,
 select:-webkit-autofill,
 select:-webkit-autofill:hover,
-select:-webkit-autofill:focus {
-  -webkit-box-shadow: 0 0 0 1000px #0e2e1c inset !important;
-  -webkit-text-fill-color: #1a5c30 !important;
-  color: #1a5c30 !important;
-  caret-color: #1a5c30 !important;
-  border-color: rgba(255, 255, 255, 0.08) !important;
+select:-webkit-autofill:focus,
+select:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 1000px hsl(0 0% 16%) inset !important;
+  -webkit-text-fill-color: hsl(0 0% 98%) !important;
+  color: hsl(0 0% 98%) !important;
+  caret-color: hsl(85 100% 40%) !important;
+  border-color: hsl(0 0% 25%) !important;
   transition: background-color 5000s ease-in-out 0s, color 5000s ease-in-out 0s;
 }
 
-/* Input base visibility */
 input, textarea, select {
-  color: #1a5c30 !important;
-  -webkit-text-fill-color: #1a5c30 !important;
+  color: hsl(0 0% 98%) !important;
+  -webkit-text-fill-color: hsl(0 0% 98%) !important;
 }
 
 input::placeholder, textarea::placeholder {
-  -webkit-text-fill-color: #6a9078 !important;
-  color: #6a9078 !important;
+  -webkit-text-fill-color: hsl(0 0% 55%) !important;
+  color: hsl(0 0% 55%) !important;
 }
 
-/* Force autofill text to be visible - Chrome/Safari/Edge */
 @keyframes onAutoFillStart {
   from { opacity: 0.99; }
   to { opacity: 1; }
@@ -209,7 +190,7 @@ input::placeholder, textarea::placeholder {
 
 input:autofill {
   animation-name: onAutoFillStart;
-  -webkit-box-shadow: 0 0 0 1000px #0e2e1c inset !important;
-  -webkit-text-fill-color: #1a5c30 !important;
-  color: #1a5c30 !important;
+  -webkit-box-shadow: 0 0 0 1000px hsl(0 0% 16%) inset !important;
+  -webkit-text-fill-color: hsl(0 0% 98%) !important;
+  color: hsl(0 0% 98%) !important;
 }

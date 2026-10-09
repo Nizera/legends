@@ -1,9 +1,23 @@
 import type { Metadata } from "next";
+import { Inter, Anton } from "next/font/google";
 import { FacebookPixel } from "@/components/FacebookPixel";
 import { AuthProvider } from "@/contexts/AuthContext";
 import "./globals.css";
 
 const PIXEL_ID = "1074294225103386";
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
+});
+
+const anton = Anton({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-anton",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://leilaolegends.online"),
@@ -38,7 +52,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="pt-BR" className="h-full antialiased">
+    <html lang="pt-BR" className={`${inter.variable} ${anton.variable} h-full antialiased`}>
       <body className="min-h-screen" suppressHydrationWarning>
         <AuthProvider>
           <FacebookPixel pixelId={PIXEL_ID} />
