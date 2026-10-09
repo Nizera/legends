@@ -63,18 +63,21 @@ function PageContent() {
             target="_blank"
             rel="noopener noreferrer"
             onClick={handleCTAClick}
-            className="group relative inline-flex items-center justify-center gap-2 w-full max-w-xs bg-primary text-primary-foreground font-heading text-base tracking-[0.02em] uppercase no-underline py-3.5 px-6 rounded-xl border border-primary/30 shadow-[0_10px_30px_rgba(0,0,0,0.3)] hover:shadow-[0_10px_50px_rgba(0,0,0,0.5)] hover:scale-[1.02] transition-all duration-300 overflow-hidden"
+            className="group relative inline-flex items-center justify-center gap-3 w-full max-w-md bg-primary text-primary-foreground font-heading text-lg tracking-[0.02em] uppercase no-underline py-5 px-10 rounded-2xl border-2 border-primary/50 shadow-[0_0_30px_rgba(132,255,0,0.3),0_10px_40px_rgba(0,0,0,0.4)] hover:shadow-[0_0_50px_rgba(132,255,0,0.5),0_15px_50px_rgba(0,0,0,0.6)] hover:scale-[1.03] hover:border-primary transition-all duration-300 overflow-hidden animate-glow"
           >
-            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/15 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
-            <span className="relative z-10">Entrar no grupo agora</span>
-            <Zap className="size-4 relative z-10" />
-          </a>
-          <div className="mt-3 flex items-center justify-center gap-4 text-xs text-muted-foreground">
-            <span className="flex items-center gap-1">
-              <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
-              Grupo gratuito
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
+            <span className="relative z-10 flex items-center gap-2">
+              <Zap className="size-5 animate-float" />
+              Entrar no grupo agora
+              <Zap className="size-5 animate-float" style={{ animationDelay: "1.5s" }} />
             </span>
-            <span>·</span>
+          </a>
+          <div className="mt-4 flex items-center justify-center gap-6 text-sm text-muted-foreground">
+            <span className="flex items-center gap-1.5">
+              <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+              Grupo 100% gratuito
+            </span>
+            <span className="text-border">|</span>
             <span>Qualquer pessoa pode dar lance</span>
           </div>
         </section>
@@ -169,9 +172,9 @@ function PageContent() {
               href="https://www.instagram.com/oscarasdaslegends/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-primary text-primary-foreground font-heading text-sm tracking-[0.02em] uppercase rounded-xl hover:bg-primary/90 transition-colors"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-pink-500 via-purple-500 to-pink-500 bg-[length:200%_100%] text-white font-heading text-base tracking-[0.02em] uppercase rounded-2xl hover:bg-[length:100%_100%] hover:shadow-[0_0_30px_rgba(236,72,153,0.5)] transition-all duration-500 animate-shimmer"
             >
-              <Camera className="size-4" />
+              <Camera className="size-5" />
               Seguir no Instagram
             </a>
           </div>
@@ -183,18 +186,21 @@ function PageContent() {
             target="_blank"
             rel="noopener noreferrer"
             onClick={handleCTAClick}
-            className="group relative inline-flex items-center justify-center gap-2 w-full max-w-xs bg-primary text-primary-foreground font-heading text-lg tracking-[0.02em] uppercase no-underline py-4 px-8 rounded-xl border border-primary/30 shadow-[0_10px_30px_rgba(0,0,0,0.3)] hover:shadow-[0_10px_50px_rgba(0,0,0,0.5)] hover:scale-[1.02] transition-all duration-300 overflow-hidden"
+            className="group relative inline-flex items-center justify-center gap-3 w-full max-w-md bg-primary text-primary-foreground font-heading text-xl tracking-[0.02em] uppercase no-underline py-6 px-12 rounded-2xl border-2 border-primary/50 shadow-[0_0_40px_rgba(132,255,0,0.4),0_15px_50px_rgba(0,0,0,0.5)] hover:shadow-[0_0_60px_rgba(132,255,0,0.6),0_20px_60px_rgba(0,0,0,0.7)] hover:scale-[1.04] hover:border-primary transition-all duration-300 overflow-hidden animate-glow"
           >
-            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/15 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
-            <span className="relative z-10">Entrar no grupo agora</span>
-            <Zap className="size-5 relative z-10" />
-          </a>
-          <div className="mt-4 flex items-center justify-center gap-4 text-xs text-muted-foreground">
-            <span className="flex items-center gap-1">
-              <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
-              Grupo gratuito
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
+            <span className="relative z-10 flex items-center gap-3">
+              <Zap className="size-6 animate-float" />
+              Entrar no grupo agora
+              <Zap className="size-6 animate-float" style={{ animationDelay: "1.5s" }} />
             </span>
-            <span>·</span>
+          </a>
+          <div className="mt-5 flex items-center justify-center gap-6 text-sm text-muted-foreground">
+            <span className="flex items-center gap-1.5">
+              <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+              Grupo 100% gratuito
+            </span>
+            <span className="text-border">|</span>
             <span>Sem compromisso, só diversão</span>
           </div>
         </section>
