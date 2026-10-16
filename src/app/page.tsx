@@ -44,19 +44,21 @@ function PageContent() {
         </section>
 
         <section className="mt-8 text-center animate-fade-up" style={{ animationDelay: "0.2s" }}>
-          <a
-            href="https://chat.whatsapp.com/EYD5CmJ0Oer4aeM0zQ9mqu"
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={handleCTAClick}
-            className="group relative inline-flex items-center justify-center gap-3 w-full max-w-lg bg-primary text-primary-foreground font-heading text-lg md:text-xl tracking-[0.02em] uppercase no-underline py-5 px-8 rounded-2xl border border-primary/40 shadow-[0_10px_30px_rgba(132,255,0,0.2)] hover:shadow-[0_15px_45px_rgba(132,255,0,0.35)] hover:scale-[1.02] hover:border-primary/60 transition-all duration-300 overflow-hidden"
-          >
-            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/15 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
-            <span className="relative z-10 flex items-center gap-2.5 font-bold">
-              <Zap className="size-6 text-primary-foreground animate-bounce" />
-              ENTRAR NO GRUPO VIP AGORA!
-            </span>
-          </a>
+          <div className="neon-border-glow mx-auto">
+            <a
+              href="https://chat.whatsapp.com/EYD5CmJ0Oer4aeM0zQ9mqu"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={handleCTAClick}
+              className="neon-border-inner group relative inline-flex items-center justify-center gap-3 w-full bg-primary text-primary-foreground font-heading text-lg md:text-xl tracking-[0.02em] uppercase no-underline py-5 px-8 shadow-[0_10px_30px_rgba(132,255,0,0.2)] hover:shadow-[0_15px_45px_rgba(132,255,0,0.35)] hover:scale-[1.02] transition-all duration-300 overflow-hidden"
+            >
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/15 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
+              <span className="relative z-10 flex items-center gap-2.5 font-bold">
+                <Zap className="size-6 text-primary-foreground animate-bounce" />
+                ENTRAR NO GRUPO VIP AGORA!
+              </span>
+            </a>
+          </div>
           <div className="mt-4 flex flex-wrap items-center justify-center gap-4 text-xs md:text-sm text-muted-foreground">
             <span className="flex items-center gap-1.5">
               <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
@@ -214,19 +216,21 @@ function PageContent() {
         </section>
 
         <section className="mt-10 text-center animate-fade-up" style={{ animationDelay: "0.7s" }}>
-          <a
-            href="https://chat.whatsapp.com/EYD5CmJ0Oer4aeM0zQ9mqu"
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={handleCTAClick}
-            className="group relative inline-flex items-center justify-center gap-3 w-full max-w-lg bg-primary text-primary-foreground font-heading text-lg md:text-xl tracking-[0.02em] uppercase no-underline py-5 px-8 rounded-2xl border border-primary/40 shadow-[0_10px_30px_rgba(132,255,0,0.2)] hover:shadow-[0_15px_45px_rgba(132,255,0,0.35)] hover:scale-[1.02] hover:border-primary/60 transition-all duration-300 overflow-hidden"
-          >
-            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/15 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
-            <span className="relative z-10 flex items-center gap-2.5 font-bold">
-              <Zap className="size-6 text-primary-foreground animate-bounce" />
-              ENTRAR NO GRUPO VIP AGORA!
-            </span>
-          </a>
+          <div className="neon-border-glow mx-auto">
+            <a
+              href="https://chat.whatsapp.com/EYD5CmJ0Oer4aeM0zQ9mqu"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={handleCTAClick}
+              className="neon-border-inner group relative inline-flex items-center justify-center gap-3 w-full bg-primary text-primary-foreground font-heading text-lg md:text-xl tracking-[0.02em] uppercase no-underline py-5 px-8 shadow-[0_10px_30px_rgba(132,255,0,0.2)] hover:shadow-[0_15px_45px_rgba(132,255,0,0.35)] hover:scale-[1.02] transition-all duration-300 overflow-hidden"
+            >
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/15 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
+              <span className="relative z-10 flex items-center gap-2.5 font-bold">
+                <Zap className="size-6 text-primary-foreground animate-bounce" />
+                ENTRAR NO GRUPO VIP AGORA!
+              </span>
+            </a>
+          </div>
           <div className="mt-4 flex flex-wrap items-center justify-center gap-4 text-xs md:text-sm text-muted-foreground">
             <span className="flex items-center gap-1.5">
               <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />

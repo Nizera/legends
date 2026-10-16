@@ -194,3 +194,36 @@ input:autofill {
   -webkit-text-fill-color: hsl(0 0% 98%) !important;
   color: hsl(0 0% 98%) !important;
 }
+
+@keyframes neonRotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.neon-border-glow {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1rem;
+  padding: 2px;
+  display: inline-flex;
+  width: 100%;
+  max-width: 32rem;
+  box-shadow: 0 0 25px rgba(132, 255, 0, 0.3);
+}
+
+.neon-border-glow::before {
+  content: '';
+  position: absolute;
+  inset: -50%;
+  background: conic-gradient(from 0deg, #84ff00, #ffffff, #22c55e, #10b981, #ffffff, #84ff00);
+  animation: neonRotate 3s linear infinite;
+  z-index: 0;
+}
+
+.neon-border-inner {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  border-radius: calc(1rem - 2px);
+  background: hsl(85 100% 40%);
+}
