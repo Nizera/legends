@@ -15,9 +15,6 @@ function PageContent() {
       <header className="sticky top-0 z-40 border-b bg-background/95 backdrop-blur">
         <div className="mx-auto flex h-14 w-full max-w-6xl items-center gap-3 px-4 md:px-6">
           <a href="/" className="flex items-center gap-2 font-heading font-bold text-lg">
-            <span className="flex size-7 items-center justify-center rounded-lg bg-primary text-primary-foreground">
-              <Zap className="size-4" />
-            </span>
             Leilão <span className="font-fifa text-primary">Legends</span>
           </a>
           <nav className="ml-auto flex items-center gap-2">
@@ -114,7 +111,7 @@ function PageContent() {
 
         <section className="mt-12 animate-fade-up" style={{ animationDelay: "0.45s" }}>
           <div className="rounded-2xl bg-card/60 border border-border p-6 md:p-8 flex flex-col md:flex-row items-center gap-6">
-            <div className="w-32 h-32 md:w-40 md:h-40 rounded-2xl overflow-hidden border-2 border-primary/40 shadow-lg flex-none">
+            <div className="w-56 h-56 sm:w-40 sm:h-40 md:w-44 md:h-44 rounded-2xl overflow-hidden border-2 border-primary/40 shadow-lg flex-none mx-auto">
               <img
                 src="/expert_landingpage.png"
                 alt="Especialista Leilão Legends"
