@@ -117,7 +117,7 @@
 
 @keyframes marquee {
   0% { transform: translateX(0); }
-  100% { transform: translateX(calc(-280px * 3 - 12px * 3)); }
+  100% { transform: translateX(-50%); }
 }
 
 .modal-overlay {

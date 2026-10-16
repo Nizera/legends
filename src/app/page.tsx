@@ -3,7 +3,6 @@
 import { Suspense } from "react";
 import { Camera, Shield, Truck, Users, Zap, CheckCircle } from "lucide-react";
 import { trackWhatsAppClick } from "@/components/FacebookPixel";
-import VideoPlayer from "@/components/VideoPlayer";
 import Chatbot from "@/components/Chatbot";
 
 function PageContent() {
@@ -37,47 +36,44 @@ function PageContent() {
 
       <main className="mx-auto w-full max-w-6xl flex-1 px-4 md:px-6 py-12 md:py-20">
         <section className="flex flex-col items-center gap-6 text-center animate-fade-up">
-          <span className="inline-flex items-center gap-2 rounded-full border px-3 py-1 text-xs text-muted-foreground">
-            <Users className="size-3.5" />
-            Leilão diário de figurinhas · Copa 2026
+          <span className="inline-flex items-center gap-2 rounded-full border px-4 py-1.5 text-xs font-medium text-muted-foreground bg-card/50 shadow-sm">
+            <Truck className="size-3.5 text-primary" />
+            🚚 Entregamos para todo o Brasil · Leilão Diário
           </span>
-          <h1 className="max-w-3xl text-balance font-heading font-bold tracking-tight text-4xl md:text-5xl lg:text-6xl">
-            Como funciona o <br />
-            <span className="text-primary">
-              Leilão <span className="font-fifa">Legends</span> da Copa
-            </span>
+          <h1 className="max-w-4xl text-balance font-heading font-bold tracking-tight text-3xl md:text-5xl lg:text-6xl leading-tight">
+            Fazemos leilões de <span className="text-primary">legends, crumples, quadros, álbuns, cards e brindes</span> para clientes novos!
           </h1>
           <p className="max-w-2xl text-balance text-muted-foreground md:text-lg">
-            1 minuto de vídeo pra você entender os lances, o pagamento e o envio
-            antes de participar.
+            Participe do nosso grupo oficial no WhatsApp, dê seus lances ao vivo e arremate peças exclusivas de colecionador com envio garantido.
           </p>
         </section>
 
-        <section className="mt-10 animate-fade-up" style={{ animationDelay: "0.2s" }}>
-          <VideoPlayer />
-        </section>
-
-        <section className="mt-8 text-center animate-fade-up" style={{ animationDelay: "0.3s" }}>
+        <section className="mt-8 text-center animate-fade-up" style={{ animationDelay: "0.2s" }}>
           <a
             href="https://chat.whatsapp.com/EYD5CmJ0Oer4aeM0zQ9mqu"
             target="_blank"
             rel="noopener noreferrer"
             onClick={handleCTAClick}
-            className="group relative inline-flex items-center justify-center gap-3 w-full max-w-md bg-primary text-primary-foreground font-heading text-lg tracking-[0.02em] uppercase no-underline py-4 px-8 rounded-2xl border border-primary/40 shadow-[0_10px_30px_rgba(132,255,0,0.15)] hover:shadow-[0_15px_40px_rgba(132,255,0,0.25)] hover:scale-[1.02] hover:border-primary/60 transition-all duration-300 overflow-hidden"
+            className="group relative inline-flex items-center justify-center gap-3 w-full max-w-lg bg-primary text-primary-foreground font-heading text-lg md:text-xl tracking-[0.02em] uppercase no-underline py-5 px-8 rounded-2xl border border-primary/40 shadow-[0_10px_30px_rgba(132,255,0,0.2)] hover:shadow-[0_15px_45px_rgba(132,255,0,0.35)] hover:scale-[1.02] hover:border-primary/60 transition-all duration-300 overflow-hidden"
           >
-            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
-            <span className="relative z-10 flex items-center gap-2">
-              <Zap className="size-5" />
-              Entrar no grupo agora
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/15 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
+            <span className="relative z-10 flex items-center gap-2.5 font-bold">
+              <Zap className="size-6 text-primary-foreground animate-bounce" />
+              ENTRAR NO GRUPO VIP AGORA!
             </span>
           </a>
-          <div className="mt-4 flex items-center justify-center gap-6 text-sm text-muted-foreground">
+          <div className="mt-4 flex flex-wrap items-center justify-center gap-4 text-xs md:text-sm text-muted-foreground">
             <span className="flex items-center gap-1.5">
               <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-              Grupo 100% gratuito
+              Grupo 100% Gratuito
             </span>
             <span className="text-border">|</span>
-            <span>Qualquer pessoa pode dar lance</span>
+            <span className="flex items-center gap-1.5 text-foreground font-medium">
+              <Truck className="size-4 text-primary" />
+              Entrega para Todo o Brasil
+            </span>
+            <span className="text-border hidden sm:inline">|</span>
+            <span>Vagas Abertas</span>
           </div>
         </section>
 
@@ -117,36 +113,79 @@ function PageContent() {
           </div>
         </section>
 
+        <section className="mt-12 animate-fade-up" style={{ animationDelay: "0.45s" }}>
+          <div className="rounded-2xl bg-card/60 border border-border p-6 md:p-8 flex flex-col md:flex-row items-center gap-6">
+            <div className="w-32 h-32 md:w-40 md:h-40 rounded-2xl overflow-hidden border-2 border-primary/40 shadow-lg flex-none">
+              <img
+                src="/expert_landingpage.png"
+                alt="Especialista Leilão Legends"
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="text-center md:text-left flex-1">
+              <span className="inline-block text-xs uppercase tracking-wider text-primary font-bold mb-1">
+                Especialista em Colecionáveis
+              </span>
+              <h3 className="font-heading text-xl md:text-2xl font-bold tracking-tight mb-2">
+                Os Caras das Legends
+              </h3>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                Especialistas em leilões diários de legends, crumples, quadros, álbuns, cards raros e brindes exclusivos. Garantimos total transparência nos lances ao vivo e envio seguro para todo o Brasil.
+              </p>
+            </div>
+          </div>
+        </section>
+
         <section className="mt-12 animate-fade-up" style={{ animationDelay: "0.5s" }}>
           <div className="flex items-center gap-3 mb-6">
             <div className="h-px flex-1 bg-gradient-to-r from-transparent to-border" />
             <span className="text-xs tracking-[0.15em] uppercase text-muted-foreground font-bold">
-              Feedbacks do grupo
+              Recebidos e Feedbacks dos Clientes
             </span>
             <div className="h-px flex-1 bg-gradient-to-l from-transparent to-border" />
           </div>
           <div className="overflow-hidden rounded-xl border border-border">
             <div className="flex gap-3 w-max animate-marquee">
-              {[1, 2, 3].map((num) => (
+              {[
+                "/review 1.jpeg",
+                "/review 2.jpeg",
+                "/review 3.jpeg",
+                "/review 4.jpeg",
+                "/review 5.jpeg",
+                "/review 6.jpeg",
+                "/feedback_01_final.png",
+                "/feedback_02_final.png",
+                "/feedback_03_final.png",
+              ].map((src, i) => (
                 <div
-                  key={`a-${num}`}
-                  className="flex-none w-[280px] rounded-xl overflow-hidden"
+                  key={`a-${i}`}
+                  className="flex-none w-[280px] rounded-xl overflow-hidden bg-card"
                 >
                   <img
-                    src={`/feedback_0${num}_final.png`}
-                    alt={`Feedback ${num}`}
+                    src={src}
+                    alt={`Recebido e Feedback ${i + 1}`}
                     className="w-full h-auto object-cover"
                   />
                 </div>
               ))}
-              {[1, 2, 3].map((num) => (
+              {[
+                "/review 1.jpeg",
+                "/review 2.jpeg",
+                "/review 3.jpeg",
+                "/review 4.jpeg",
+                "/review 5.jpeg",
+                "/review 6.jpeg",
+                "/feedback_01_final.png",
+                "/feedback_02_final.png",
+                "/feedback_03_final.png",
+              ].map((src, i) => (
                 <div
-                  key={`b-${num}`}
-                  className="flex-none w-[280px] rounded-xl overflow-hidden"
+                  key={`b-${i}`}
+                  className="flex-none w-[280px] rounded-xl overflow-hidden bg-card"
                 >
                   <img
-                    src={`/feedback_0${num}_final.png`}
-                    alt={`Feedback ${num}`}
+                    src={src}
+                    alt={`Recebido e Feedback ${i + 1}`}
                     className="w-full h-auto object-cover"
                   />
                 </div>
@@ -185,21 +224,24 @@ function PageContent() {
             target="_blank"
             rel="noopener noreferrer"
             onClick={handleCTAClick}
-            className="group relative inline-flex items-center justify-center gap-3 w-full max-w-md bg-primary text-primary-foreground font-heading text-xl tracking-[0.02em] uppercase no-underline py-5 px-10 rounded-2xl border border-primary/40 shadow-[0_10px_30px_rgba(132,255,0,0.15)] hover:shadow-[0_15px_40px_rgba(132,255,0,0.25)] hover:scale-[1.02] hover:border-primary/60 transition-all duration-300 overflow-hidden"
+            className="group relative inline-flex items-center justify-center gap-3 w-full max-w-lg bg-primary text-primary-foreground font-heading text-lg md:text-xl tracking-[0.02em] uppercase no-underline py-5 px-8 rounded-2xl border border-primary/40 shadow-[0_10px_30px_rgba(132,255,0,0.2)] hover:shadow-[0_15px_45px_rgba(132,255,0,0.35)] hover:scale-[1.02] hover:border-primary/60 transition-all duration-300 overflow-hidden"
           >
-            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
-            <span className="relative z-10 flex items-center gap-2">
-              <Zap className="size-5" />
-              Entrar no grupo agora
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/15 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
+            <span className="relative z-10 flex items-center gap-2.5 font-bold">
+              <Zap className="size-6 text-primary-foreground animate-bounce" />
+              ENTRAR NO GRUPO VIP AGORA!
             </span>
           </a>
-          <div className="mt-4 flex items-center justify-center gap-6 text-sm text-muted-foreground">
+          <div className="mt-4 flex flex-wrap items-center justify-center gap-4 text-xs md:text-sm text-muted-foreground">
             <span className="flex items-center gap-1.5">
               <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-              Grupo 100% gratuito
+              Grupo 100% Gratuito
             </span>
             <span className="text-border">|</span>
-            <span>Sem compromisso, só diversão</span>
+            <span className="flex items-center gap-1.5 text-foreground font-medium">
+              <Truck className="size-4 text-primary" />
+              Entrega para Todo o Brasil
+            </span>
           </div>
         </section>
 
