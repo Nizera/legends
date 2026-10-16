@@ -3,7 +3,6 @@
 import { Suspense } from "react";
 import { Camera, Shield, Truck, Users, Zap, CheckCircle } from "lucide-react";
 import { trackWhatsAppClick } from "@/components/FacebookPixel";
-import Chatbot from "@/components/Chatbot";
 
 function PageContent() {
   const handleCTAClick = () => {
@@ -256,8 +255,6 @@ function PageContent() {
           </div>
         </footer>
       </main>
-
-      <Chatbot />
     </div>
   );
 }
