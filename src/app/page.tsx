@@ -37,8 +37,7 @@ function PageContent() {
       <main className="mx-auto w-full max-w-6xl flex-1 px-4 md:px-6 py-12 md:py-20">
         <section className="flex flex-col items-center gap-6 text-center animate-fade-up">
           <span className="inline-flex items-center gap-2 rounded-full border px-4 py-1.5 text-xs font-medium text-muted-foreground bg-card/50 shadow-sm">
-            <Truck className="size-3.5 text-primary" />
-            🚚 Entregamos para todo o Brasil · Leilão Diário
+            Entregamos para todo o Brasil · Leilão Diário
           </span>
           <h1 className="max-w-4xl text-balance font-heading font-bold tracking-tight text-3xl md:text-5xl lg:text-6xl leading-tight">
             Fazemos leilões de <span className="text-primary">legends, crumples, quadros, álbuns, cards e brindes</span> para clientes novos!
