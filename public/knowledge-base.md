@@ -32,4 +32,4 @@ O Leilão Legends da Copa é um leilão informal entre colecionadores de figurin
 - Grupo é gratuito — qualquer pessoa pode dar lance
 
 ## Contato
-- Grupo no WhatsApp: https://chat.whatsapp.com/CNE7Z6OkG6EHOTVZDRDP0G
+- Grupo no WhatsApp: https://chat.whatsapp.com/BHlJhz6YAF6Aw0l0kx5pwM

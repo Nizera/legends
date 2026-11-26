@@ -46,7 +46,7 @@ function PageContent() {
         <section className="mt-8 text-center animate-fade-up" style={{ animationDelay: "0.2s" }}>
           <div className="neon-border-glow mx-auto">
             <a
-              href="https://chat.whatsapp.com/EYD5CmJ0Oer4aeM0zQ9mqu"
+              href="https://chat.whatsapp.com/BHlJhz6YAF6Aw0l0kx5pwM"
               target="_blank"
               rel="noopener noreferrer"
               onClick={handleCTAClick}
@@ -218,7 +218,7 @@ function PageContent() {
         <section className="mt-10 text-center animate-fade-up" style={{ animationDelay: "0.7s" }}>
           <div className="neon-border-glow mx-auto">
             <a
-              href="https://chat.whatsapp.com/EYD5CmJ0Oer4aeM0zQ9mqu"
+              href="https://chat.whatsapp.com/BHlJhz6YAF6Aw0l0kx5pwM"
               target="_blank"
               rel="noopener noreferrer"
               onClick={handleCTAClick}
